@@ -101,7 +101,7 @@ class App {
 
             //* Updating the user location
             socket.on('updateLocation', (data) => {
-                io.emit('updateLocationObject', data);
+                io.emit('updateLocationResponse', data);
             });
 
             //* disconnect socket
