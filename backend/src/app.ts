@@ -41,12 +41,13 @@ class App {
             },
         });
 
+        //* creating a map to store the room creator.
         const roomCreator = new Map<string, string>();
 
         io.on('connection', (socket: ISocketInterface) => {
             console.log(`Socket connection on: ${socket.id}`);
 
-            //* creating a new room
+            //* event for creating a new room
             socket.on('createRoom', (data) => {
                 const roomId = Math.random().toString(36).substring(2, 7);
                 socket.join(roomId);
